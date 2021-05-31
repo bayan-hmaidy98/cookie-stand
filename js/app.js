@@ -3,12 +3,17 @@ function randomValue(min, max) {
 }
 let timeArr = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12am: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '];
 let globVar = document.getElementById('shop1')
+
+let ranVar;
+
+
 //First Shop: Seattle
 const Seattle = {
     shopLocation: 'Seattle',
     min: 23,
     max: 65,
     avg: 6.3,
+
     total:0,
     hourRan:[],
     hourArr:[],
@@ -16,6 +21,14 @@ const Seattle = {
     updatingRandomCust: function () {
         for (let i = 0; i<timeArr.length; i++) {
            this.hourRan.push(randomValue(this.min,this.max))
+
+    updatingTheNum: function () {
+        for (let i = 0; i < 14; i++) {
+            ranVar = randomValue(this.min, this.max);
+
+            this.hourArr[i] = ranVar * Math.ceil(this.avg);
+            total += this.hourArr[i];
+
         }
     },
 
@@ -60,6 +73,7 @@ Seattle.render();
 // Second Shop: Tokyo
 const Tokyo = {
     shopLocation: 'Tokyo',
+
     min: 3,
     max: 24,
     avg: 1.2,
@@ -82,6 +96,12 @@ for (let i=0; i<this.hourRan.length; i++)
 console.log(this.hourRan)
 console.log(this.hourArr);
 console.log(this.total);
+
+    updatingTheNum: function () {
+        for (let i = 0; i < 14; i++) {
+            ranVar = randomValue(this.min, this.max);
+
+
     },
     render: function () {
         let articleEl = document.createElement('article');
@@ -98,11 +118,13 @@ console.log(this.total);
         for (let i = 0; i < 14; i++) {
             ilEl = document.createElement('li');
             unOrder.appendChild(ilEl);
+
           ilEl.textContent = `${timeArr[i]}  ${this.hourArr[i]}`;
         }
         let h4El = document.createElement('h4');
         articleEl.appendChild(h4El);
         h4El.textContent = 'Total: ' + this.total;
+
     },
 }
 
@@ -114,6 +136,7 @@ Tokyo.render();
 //Third Shop: Dubai
 const Dubai = {
     shopLocation: 'Dubai',
+
     min: 11,
     max: 38,
     avg: 3.7,
@@ -136,6 +159,12 @@ for (let i=0; i<this.hourRan.length; i++)
 console.log(this.hourRan)
 console.log(this.hourArr);
 console.log(this.total);
+
+    updatingTheNum: function () {
+        for (let i = 0; i < 14; i++) {
+            ranVar = randomValue(this.min, this.max);
+
+
     },
     render: function () {
         let articleEl = document.createElement('article');
@@ -152,11 +181,13 @@ console.log(this.total);
         for (let i = 0; i < 14; i++) {
             ilEl = document.createElement('li');
             unOrder.appendChild(ilEl);
+
           ilEl.textContent = `${timeArr[i]}  ${this.hourArr[i]}`;
         }
         let h4El = document.createElement('h4');
         articleEl.appendChild(h4El);
         h4El.textContent = 'Total: ' + this.total;
+
     },
 }
 
@@ -168,6 +199,7 @@ Dubai.render();
 // Forth Shop: Paris
 const Paris = {
     shopLocation: 'Paris',
+
     min: 20,
     max: 38,
     avg: 2.3,
@@ -190,6 +222,14 @@ for (let i=0; i<this.hourRan.length; i++)
 console.log(this.hourRan)
 console.log(this.hourArr);
 console.log(this.total);
+
+    updatingTheNum: function () {
+        for (let i = 0; i < 14; i++) {
+            ranVar = randomValue(this.min, this.max);
+
+
+        console.log(total4);
+
     },
     render: function () {
         let articleEl = document.createElement('article');
@@ -206,7 +246,9 @@ console.log(this.total);
         for (let i = 0; i < 14; i++) {
             ilEl = document.createElement('li');
             unOrder.appendChild(ilEl);
+
           ilEl.textContent = `${timeArr[i]}  ${this.hourArr[i]}`;
+
         }
         let h4El = document.createElement('h4');
         articleEl.appendChild(h4El);
@@ -221,6 +263,7 @@ Paris.render();
 // Fifth Shop: Lima 
 const Lima = {
     shopLocation: 'Lima',
+
     min: 2,
     max: 16,
     avg: 4.6,
@@ -243,6 +286,12 @@ for (let i=0; i<this.hourRan.length; i++)
 console.log(this.hourRan)
 console.log(this.hourArr);
 console.log(this.total);
+
+    updatingTheNum: function () {
+        for (let i = 0; i < 14; i++) {
+            ranVar = randomValue(this.min, this.max);
+
+
     },
     render: function () {
         let articleEl = document.createElement('article');
@@ -259,11 +308,13 @@ console.log(this.total);
         for (let i = 0; i < 14; i++) {
             ilEl = document.createElement('li');
             unOrder.appendChild(ilEl);
+
           ilEl.textContent = `${timeArr[i]}  ${this.hourArr[i]}`;
         }
         let h4El = document.createElement('h4');
         articleEl.appendChild(h4El);
         h4El.textContent = 'Total: ' + this.total;
+
     },
 }
 
