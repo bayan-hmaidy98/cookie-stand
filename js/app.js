@@ -1,48 +1,36 @@
 function randomValue(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+let timeArr = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12am: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '];
 let globVar = document.getElementById('shop1')
-<<<<<<< HEAD
+
 let ranVar;
 
-=======
-let hourRan = 1;
-let ranVar;
-let total = 0;
-let hourRan2 = 1;
-let total2 = 0;
-let hourRan3 = 1;
-let total3 = 0;
-let hourRan4 = 1;
-let total4 = 0;
-let hourRan5 = 1;
-let total5 = 0;
->>>>>>> ddcd85f8331711df24fbc834682d314211031cd0
+
 //First Shop: Seattle
-
-
-
 const Seattle = {
     shopLocation: 'Seattle',
-    max: 23,
-    min: 65,
+    min: 23,
+    max: 65,
     avg: 6.3,
-    timeArr: ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12am: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '],
-    hourArr: [],
-<<<<<<< HEAD
     total:0,
-    hourRan:1,
-=======
->>>>>>> ddcd85f8331711df24fbc834682d314211031cd0
-    updatingTheNum: function () {
-        for (let i = 0; i < 14; i++) {
-            ranVar = randomValue(this.min, this.max);
-
-            this.hourArr[i] = ranVar * Math.ceil(this.avg);
-            total += this.hourArr[i];
+    hourRan:[],
+    hourArr:[],
+    updatingRandomCust: function () {
+        for (let i = 0; i<timeArr.length; i++) {
+           this.hourRan.push(randomValue(this.min,this.max))
         }
-        console.log(this.hourArr);
-        console.log(total);
+    },
+
+    calculatingCookiesNum: function(){
+for (let i=0; i<this.hourRan.length; i++)
+{
+    this.hourArr.push(this.hourRan[i]*(Math.ceil(this.avg)));
+    this.total+= this.hourArr[i]
+}
+console.log(this.hourRan)
+console.log(this.hourArr);
+console.log(this.total);
     },
     render: function () {
         let articleEl = document.createElement('article');
@@ -59,49 +47,44 @@ const Seattle = {
         for (let i = 0; i < 14; i++) {
             ilEl = document.createElement('li');
             unOrder.appendChild(ilEl);
-            ilEl.textContent = this.timeArr[i] + this.hourArr[i];
+          ilEl.textContent = `${timeArr[i]}  ${this.hourArr[i]}`;
         }
         let h4El = document.createElement('h4');
         articleEl.appendChild(h4El);
-        h4El.textContent = 'Total: ' + total;
+        h4El.textContent = 'Total: ' + this.total;
     },
 }
 
-Seattle.updatingTheNum();
+Seattle.updatingRandomCust();
+Seattle.calculatingCookiesNum();
 Seattle.render();
 
-// Second shop: Tokyo
+
+// Second Shop: Tokyo
 const Tokyo = {
     shopLocation: 'Tokyo',
-    max: 3,
-    min: 24,
-    avg2: 1.2,
-<<<<<<< HEAD
-    total:0,
-    hourRan:1,
-    timeArr: ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12am: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '],
-    hourArr: [],
-=======
-    timeArr: ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12am: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '],
-    hourArr2: [],
->>>>>>> ddcd85f8331711df24fbc834682d314211031cd0
-    updatingTheNum: function () {
-        for (let i = 0; i < 14; i++) {
-            ranVar = randomValue(this.min, this.max);
 
-<<<<<<< HEAD
-            this.hourArr[i] = ranVar * Math.ceil(this.avg2);
-            total += this.hourArr[i];
+    min: 3,
+    max: 24,
+    avg: 1.2,
+    total:0,
+    hourRan:[],
+    hourArr:[],
+    updatingRandomCust: function () {
+        for (let i = 0; i<timeArr.length; i++) {
+           this.hourRan.push(randomValue(this.min,this.max))
         }
-        console.log(this.hourArr);
-        console.log(total);
-=======
-            this.hourArr2[i] = ranVar * Math.ceil(this.avg2);
-            total2 += this.hourArr2[i];
-        }
-        console.log(this.hourArr2);
-        console.log(total2);
->>>>>>> ddcd85f8331711df24fbc834682d314211031cd0
+    },
+
+    calculatingCookiesNum: function(){
+for (let i=0; i<this.hourRan.length; i++)
+{
+    this.hourArr.push(this.hourRan[i]*(Math.ceil(this.avg)));
+    this.total+= this.hourArr[i]
+}
+console.log(this.hourRan)
+console.log(this.hourArr);
+console.log(this.total);
     },
     render: function () {
         let articleEl = document.createElement('article');
@@ -118,57 +101,47 @@ const Tokyo = {
         for (let i = 0; i < 14; i++) {
             ilEl = document.createElement('li');
             unOrder.appendChild(ilEl);
-<<<<<<< HEAD
-            ilEl.textContent = this.timeArr[i] + this.hourArr[i];
+
+          ilEl.textContent = `${timeArr[i]}  ${this.hourArr[i]}`;
         }
         let h4El = document.createElement('h4');
         articleEl.appendChild(h4El);
-        h4El.textContent = 'Total: ' + total;
-=======
-            ilEl.textContent = this.timeArr[i] + this.hourArr2[i];
-        }
-        let h4El = document.createElement('h4');
-        articleEl.appendChild(h4El);
-        h4El.textContent = 'Total: ' + total2;
->>>>>>> ddcd85f8331711df24fbc834682d314211031cd0
+        h4El.textContent = 'Total: ' + this.total;
+
     },
 }
 
-Tokyo.updatingTheNum();
+Tokyo.updatingRandomCust();
+Tokyo.calculatingCookiesNum();
 Tokyo.render();
 
-// Third Shop: 
+
+//Third Shop: Dubai
 const Dubai = {
     shopLocation: 'Dubai',
-    max: 11,
-    min: 38,
-    avg2: 3.7,
-<<<<<<< HEAD
-    total:0,
-    hourRan:1,
-    timeArr: ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12am: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '],
-    hourArr: [],
-=======
-    timeArr: ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12am: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '],
-    hourArr3: [],
->>>>>>> ddcd85f8331711df24fbc834682d314211031cd0
-    updatingTheNum: function () {
-        for (let i = 0; i < 14; i++) {
-            ranVar = randomValue(this.min, this.max);
 
-<<<<<<< HEAD
-            this.hourArr[i] = ranVar * Math.ceil(this.avg2);
-            total += this.hourArr[i];
+    min: 11,
+    max: 38,
+    avg: 3.7,
+    total:0,
+    hourRan:[],
+    hourArr:[],
+    updatingRandomCust: function () {
+        for (let i = 0; i<timeArr.length; i++) {
+           this.hourRan.push(randomValue(this.min,this.max))
         }
-        console.log(this.hourArr);
-        console.log(total);
-=======
-            this.hourArr3[i] = ranVar * Math.ceil(this.avg2);
-            total3 += this.hourArr3[i];
-        }
-        console.log(this.hourArr3);
-        console.log(total3);
->>>>>>> ddcd85f8331711df24fbc834682d314211031cd0
+    },
+
+    calculatingCookiesNum: function(){
+for (let i=0; i<this.hourRan.length; i++)
+{
+    this.hourArr.push(this.hourRan[i]*(Math.ceil(this.avg)));
+    this.total+= this.hourArr[i]
+}
+console.log(this.hourRan)
+console.log(this.hourArr);
+console.log(this.total);
+
     },
     render: function () {
         let articleEl = document.createElement('article');
@@ -185,56 +158,47 @@ const Dubai = {
         for (let i = 0; i < 14; i++) {
             ilEl = document.createElement('li');
             unOrder.appendChild(ilEl);
-<<<<<<< HEAD
-            ilEl.textContent = this.timeArr[i] + this.hourArr[i];
+
+          ilEl.textContent = `${timeArr[i]}  ${this.hourArr[i]}`;
         }
         let h4El = document.createElement('h4');
         articleEl.appendChild(h4El);
-        h4El.textContent = 'Total: ' + total;
-=======
-            ilEl.textContent = this.timeArr[i] + this.hourArr3[i];
-        }
-        let h4El = document.createElement('h4');
-        articleEl.appendChild(h4El);
-        h4El.textContent = 'Total: ' + total3;
->>>>>>> ddcd85f8331711df24fbc834682d314211031cd0
+        h4El.textContent = 'Total: ' + this.total;
+
     },
 }
 
-Dubai.updatingTheNum();
+Dubai.updatingRandomCust();
+Dubai.calculatingCookiesNum();
 Dubai.render();
 
-// Forth Shop: Priso
+
+// Forth Shop: Paris
 const Paris = {
     shopLocation: 'Paris',
-    max: 20,
-    min: 38,
-    avg2: 2.3,
-<<<<<<< HEAD
-    total:0,
-    hourRan:1,
-    timeArr: ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12am: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '],
-    hourArr: [],
-=======
-    timeArr: ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12am: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '],
-    hourArr4: [],
->>>>>>> ddcd85f8331711df24fbc834682d314211031cd0
-    updatingTheNum: function () {
-        for (let i = 0; i < 14; i++) {
-            ranVar = randomValue(this.min, this.max);
 
-<<<<<<< HEAD
-            this.hourArr[i] = ranVar * Math.ceil(this.avg2);
-            total4 += this.hourArr[i];
+    min: 20,
+    max: 38,
+    avg: 2.3,
+    total:0,
+    hourRan:[],
+    hourArr:[],
+    updatingRandomCust: function () {
+        for (let i = 0; i<timeArr.length; i++) {
+           this.hourRan.push(randomValue(this.min,this.max))
         }
-        console.log(this.hourArr);
-=======
-            this.hourArr4[i] = ranVar * Math.ceil(this.avg2);
-            total4 += this.hourArr4[i];
-        }
-        console.log(this.hourArr4);
->>>>>>> ddcd85f8331711df24fbc834682d314211031cd0
-        console.log(total4);
+    },
+
+    calculatingCookiesNum: function(){
+for (let i=0; i<this.hourRan.length; i++)
+{
+    this.hourArr.push(this.hourRan[i]*(Math.ceil(this.avg)));
+    this.total+= this.hourArr[i]
+}
+console.log(this.hourRan)
+console.log(this.hourArr);
+console.log(this.total);
+
     },
     render: function () {
         let articleEl = document.createElement('article');
@@ -251,53 +215,45 @@ const Paris = {
         for (let i = 0; i < 14; i++) {
             ilEl = document.createElement('li');
             unOrder.appendChild(ilEl);
-<<<<<<< HEAD
-            ilEl.textContent = this.timeArr[i] + this.hourArr[i];
-=======
-            ilEl.textContent = this.timeArr[i] + this.hourArr4[i];
->>>>>>> ddcd85f8331711df24fbc834682d314211031cd0
+
+          ilEl.textContent = `${timeArr[i]}  ${this.hourArr[i]}`;
+
         }
         let h4El = document.createElement('h4');
         articleEl.appendChild(h4El);
-        h4El.textContent = 'Total: ' + total4;
+        h4El.textContent = 'Total: ' + this.total;
     },
 }
 
-Paris.updatingTheNum();
+Paris.updatingRandomCust();
+Paris.calculatingCookiesNum();
 Paris.render();
 
-// Fifth Shop
+// Fifth Shop: Lima 
 const Lima = {
     shopLocation: 'Lima',
-    max: 2,
-    min: 16,
-    avg2: 4.6,
-<<<<<<< HEAD
-    total:0,
-    hourRan:1,
-    timeArr: ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12am: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '],
-    hourArr: [],
-=======
-    timeArr: ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12am: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '],
-    hourArr5: [],
->>>>>>> ddcd85f8331711df24fbc834682d314211031cd0
-    updatingTheNum: function () {
-        for (let i = 0; i < 14; i++) {
-            ranVar = randomValue(this.min, this.max);
 
-<<<<<<< HEAD
-            this.hourArr[i] = ranVar * Math.ceil(this.avg2);
-            total += this.hourArr[i];
+    min: 2,
+    max: 16,
+    avg: 4.6,
+    total:0,
+    hourRan:[],
+    hourArr:[],
+    updatingRandomCust: function () {
+        for (let i = 0; i<timeArr.length; i++) {
+           this.hourRan.push(randomValue(this.min,this.max))
         }
-        console.log(this.hourArr);
-        console.log(total);
-=======
-            this.hourArr5[i] = ranVar * Math.ceil(this.avg2);
-            total5 += this.hourArr5[i];
-        }
-        console.log(this.hourArr5);
-        console.log(total5);
->>>>>>> ddcd85f8331711df24fbc834682d314211031cd0
+    },
+
+    calculatingCookiesNum: function(){
+for (let i=0; i<this.hourRan.length; i++)
+{
+    this.hourArr.push(this.hourRan[i]*(Math.ceil(this.avg)));
+    this.total+= this.hourArr[i]
+}
+console.log(this.hourRan)
+console.log(this.hourArr);
+console.log(this.total);
     },
     render: function () {
         let articleEl = document.createElement('article');
@@ -314,22 +270,16 @@ const Lima = {
         for (let i = 0; i < 14; i++) {
             ilEl = document.createElement('li');
             unOrder.appendChild(ilEl);
-<<<<<<< HEAD
-            ilEl.textContent = this.timeArr[i] + this.hourArr[i];
+
+          ilEl.textContent = `${timeArr[i]}  ${this.hourArr[i]}`;
         }
         let h4El = document.createElement('h4');
         articleEl.appendChild(h4El);
-        h4El.textContent = 'Total: ' + total;
-=======
-            ilEl.textContent = this.timeArr[i] + this.hourArr5[i];
-        }
-        let h4El = document.createElement('h4');
-        articleEl.appendChild(h4El);
-        h4El.textContent = 'Total: ' + total5;
->>>>>>> ddcd85f8331711df24fbc834682d314211031cd0
+        h4El.textContent = 'Total: ' + this.total;
+
     },
 }
 
-Lima.updatingTheNum();
+Lima.updatingRandomCust();
+Lima.calculatingCookiesNum();
 Lima.render();
-
