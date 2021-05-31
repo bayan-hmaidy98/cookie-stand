@@ -13,22 +13,12 @@ const Seattle = {
     min: 23,
     max: 65,
     avg: 6.3,
-
     total:0,
     hourRan:[],
     hourArr:[],
-    total:0,
     updatingRandomCust: function () {
         for (let i = 0; i<timeArr.length; i++) {
            this.hourRan.push(randomValue(this.min,this.max))
-
-    updatingTheNum: function () {
-        for (let i = 0; i < 14; i++) {
-            ranVar = randomValue(this.min, this.max);
-
-            this.hourArr[i] = ranVar * Math.ceil(this.avg);
-            total += this.hourArr[i];
-
         }
     },
 
@@ -80,7 +70,6 @@ const Tokyo = {
     total:0,
     hourRan:[],
     hourArr:[],
-    total:0,
     updatingRandomCust: function () {
         for (let i = 0; i<timeArr.length; i++) {
            this.hourRan.push(randomValue(this.min,this.max))
@@ -96,12 +85,6 @@ for (let i=0; i<this.hourRan.length; i++)
 console.log(this.hourRan)
 console.log(this.hourArr);
 console.log(this.total);
-
-    updatingTheNum: function () {
-        for (let i = 0; i < 14; i++) {
-            ranVar = randomValue(this.min, this.max);
-
-
     },
     render: function () {
         let articleEl = document.createElement('article');
@@ -143,7 +126,6 @@ const Dubai = {
     total:0,
     hourRan:[],
     hourArr:[],
-    total:0,
     updatingRandomCust: function () {
         for (let i = 0; i<timeArr.length; i++) {
            this.hourRan.push(randomValue(this.min,this.max))
@@ -159,11 +141,6 @@ for (let i=0; i<this.hourRan.length; i++)
 console.log(this.hourRan)
 console.log(this.hourArr);
 console.log(this.total);
-
-    updatingTheNum: function () {
-        for (let i = 0; i < 14; i++) {
-            ranVar = randomValue(this.min, this.max);
-
 
     },
     render: function () {
@@ -206,7 +183,6 @@ const Paris = {
     total:0,
     hourRan:[],
     hourArr:[],
-    total:0,
     updatingRandomCust: function () {
         for (let i = 0; i<timeArr.length; i++) {
            this.hourRan.push(randomValue(this.min,this.max))
@@ -222,13 +198,6 @@ for (let i=0; i<this.hourRan.length; i++)
 console.log(this.hourRan)
 console.log(this.hourArr);
 console.log(this.total);
-
-    updatingTheNum: function () {
-        for (let i = 0; i < 14; i++) {
-            ranVar = randomValue(this.min, this.max);
-
-
-        console.log(total4);
 
     },
     render: function () {
@@ -270,7 +239,6 @@ const Lima = {
     total:0,
     hourRan:[],
     hourArr:[],
-    total:0,
     updatingRandomCust: function () {
         for (let i = 0; i<timeArr.length; i++) {
            this.hourRan.push(randomValue(this.min,this.max))
@@ -286,12 +254,6 @@ for (let i=0; i<this.hourRan.length; i++)
 console.log(this.hourRan)
 console.log(this.hourArr);
 console.log(this.total);
-
-    updatingTheNum: function () {
-        for (let i = 0; i < 14; i++) {
-            ranVar = randomValue(this.min, this.max);
-
-
     },
     render: function () {
         let articleEl = document.createElement('article');
