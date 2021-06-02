@@ -66,4 +66,14 @@ body, html {
     font-family: 'Acme', sans-serif;
     display: block;
       }
-   
+   table, th, td{
+    border: 1px solid black;
+    margin: 20px;
+   }
+   table{
+     padding-bottom: 30px;
+   }
+
+   #SalmonCookies{
+     padding-top: 30px;
+   }
