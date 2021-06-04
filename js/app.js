@@ -1,10 +1,11 @@
+'use strict'
+
 function randomValue(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 let timeArr = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 let globVar = document.getElementById('SalmonCookies')
 let dataCollected = [];
-let table = document.getElementById('table')
 
 function Location(shopLocation, min, max, avg) {
     this.shopLocation = shopLocation;
@@ -37,12 +38,13 @@ Location.prototype.calculatingCookiesNum = function () {
 
 let articleEl = document.createElement('article');
 globVar.appendChild(articleEl);
-articleEl.appendChild(table);
+let tableEl = document.createElement('table')
+articleEl.appendChild(tableEl);
 
 
 function getFirstRow(){
 let firstRow = document.createElement('tr');
-table.appendChild(firstRow);
+tableEl.appendChild(firstRow);
 let emptyCell = document.createElement('th');
 firstRow.appendChild(emptyCell);
 
@@ -59,7 +61,7 @@ getFirstRow();
 Location.prototype.render = function () {
    
     let secondRow = document.createElement('tr')
-    table.appendChild(secondRow)
+    tableEl.appendChild(secondRow)
     let locationName = document.createElement('th')
     locationName.textContent = this.shopLocation 
     secondRow.appendChild(locationName)
@@ -79,7 +81,7 @@ Location.prototype.render = function () {
     
 function footerRow(){
    let lastRow = document.createElement('tr')
-    table.appendChild(lastRow)
+    tableEl.appendChild(lastRow)
     let sumOfTotal = document.createElement('th')
     lastRow.appendChild(sumOfTotal)
     sumOfTotal.textContent = 'Totals';
@@ -115,9 +117,52 @@ let paris = new Location('Paris', 20, 38, 2.3)
 let lima = new Location('Lima', 2, 16, 4.6)
 console.log(seattle.hourRan)
 
+
 for (let i=0; i<dataCollected.length; i++){
     dataCollected[i].randomNumbOfCust();
     dataCollected[i].calculatingCookiesNum();
     dataCollected[i].render();
+
+//     newNew.newLine();
+// newNew.randomNumbOfCust();
+// newNew.calculatingCookiesNum();
+// newNew.render();
+
 }
 footerRow();
+
+const shopform = document.getElementById('newBranch');
+shopform.addEventListener('submit', newbranchCalling);
+
+function newbranchCalling(event){
+    event.preventDefault();
+    // console.log(event)
+    let nbranch = event.target.branch.value;
+    console.log(nbranch);
+    
+    let minimum = event.target.minVal.value;
+    console.log(minimum);
+
+    let maximum = event.target.maxVal.value;
+    console.log(maximum);
+
+    let avgr = event.target.average.value;
+    console.log(avgr);
+
+    let newNew = new Location(nbranch, minimum, maximum, avgr);
+
+    newLine();
+       newNew.randomNumbOfCust();
+       newNew.calculatingCookiesNum();
+       newNew.render();
+       footerRow();
+
+    
+}
+    function newLine(){
+        var rowCount = tableEl.rows.length;
+        tableEl.deleteRow(rowCount -1);
+       }
+
+
+       
