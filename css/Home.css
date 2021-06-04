@@ -2,6 +2,7 @@ body, html {
     height: 100%;
     margin: 0;
     position: relative;
+    background-color: #DEAB23;
 
   }
   
@@ -15,7 +16,7 @@ header{
 }
 main, footer {
   padding: 60px;
-  background-color: #DEAB23;
+
   width: 100%;
 }
   
@@ -23,31 +24,34 @@ main, footer {
   
     text-align: center;
     padding: 30px;
-    font-size:50px; 
+    font-size:5em; 
     color: white;
     font-family: 'Limelight', cursive;
  
   }
-  header h3 {
+  #storesDec {
     text-align: center; 
-    color: white;
-    font-family: 'Limelight', cursive;
+    color: rgb(241,79,31);
+    font-family: 'Acme', sans-serif;
+    font-size: 4em;
   }
 
   p{
       font-weight: bold;
       color: rgb(44,67,48);
+      font-family: 'Acme', sans-serif;
+      font-size: 3em;
   }
-  main h3,h2{
+  main h2{
     color: rgb(241,79,31);
-    background-color: white;
+  
         width: 100px;
         padding: 10px;
         padding: 15px;
         display: block;
         
   }
-  li{
+ .list{
     font-weight: bold;
     color: rgb(44,67,48);
     background-color: white;
@@ -57,27 +61,44 @@ main, footer {
     font-family: 'Acme', sans-serif;
     display: inline-block;
     text-align: center;
+    margin-left: 6em;
+    margin-bottom: 2em;
+    margin-top: 2em;
       }
      .welcoming{
        display: inline;
-       
-     }
-     #text{
-       width: 50%;
-       padding-left: 10px;
+
      }
 
-     #img{
-       position: relative;
+     /* #text{
+       width: 50%;
+      
+     } */
+
+     #imgage{
+      
        float: left;
        width: 50%;
-       padding-right: 10px;
+       
      }
 
      footer{
        clear: both;
+       
      }
-     #footer{
+     .footer{
       text-decoration: none;
       color: rgb(44,67,48);
+     margin-left: 60em;
+     font-family: 'Acme', sans-serif;
+      font-size: 15px;
+      margin-top: -5em;
+    
+     }
+     #advertizing{
+      font-size: 2em;
+      margin-top: -9em;
+      margin-left: 28em;
+      width: 50%;
+    
      }
